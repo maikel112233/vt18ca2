@@ -33,14 +33,22 @@ class CountdownComponent {
   directives: [CountdownComponent],
   template: `<div class="container text-center">
                <img src="assets/img/reloj2.png" />
-               <countdown [seconds]="25" (complete)="onCountdownCompleted()">
+               <countdown [seconds]="3" (complete)="pepe()" (progress)="hola()">
                ></countdown>
+               <h1 id="demo"></h1>
              </div>`
 
 })
 class TimerComponent {
   onCountdownCompleted(): void {
     alert('¡Tiempo Acabado!');
+
+  }
+  pepe():void{
+    document.write("tiempo acabado");
+  }
+  hola():void{
+    document.getElementById("demo").innerHTML = "Hello World";
   }
 }
 
